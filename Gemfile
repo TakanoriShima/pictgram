@@ -70,3 +70,4 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 gem 'bcrypt'
+gem 'carrierwave'
