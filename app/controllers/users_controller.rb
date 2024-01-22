@@ -6,7 +6,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # binding.pry
     if @user.save
-      redirect_to topics_path, success: '登録が完了しました'
+      session[:user_id] = @user.id
+      flash[:success] = '登録が完了しました'
+      # redirect_to topics_path, success: '登録が完了しました'
+      redirect_to topics_path
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
